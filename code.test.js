@@ -10,5 +10,4 @@ const graph = {
     C: { A: 4, B: 2, D: 1 },
     D: { B: 5, C: 1 }
 };
-assert(JSON.stringify(dijkstra(graph, 'A')) == JSON.stringify({A: 0, B: 1, C: 3, D: 4}
-(4) ['A', 'B', 'C', 'D']));
+assert(JSON.stringify(dijkstra(graph, 'A')) == JSON.stringify({A: 0, B: 1, C: 3, D: 4}(4) ['A', 'B', 'C', 'D']));
