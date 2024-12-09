@@ -1,8 +1,6 @@
 function dijkstra(graph, sourceNode) {
     // store distances traveled
     var distances = {};
-    // store path traveled
-    var previous = {};
     // keep track of which nodes have not yet been visited
     var unmarked = [];
 
@@ -14,8 +12,6 @@ function dijkstra(graph, sourceNode) {
         else {
             distances[n] = Infinity;
         }
-        // initialize each step in path (each previous node visited for every node) to null
-        previous[n] = null;
         // push all nodes to unmarked as we have not yet visited any (chatGPT assisted)
         unmarked.push(n)
     }
@@ -46,7 +42,6 @@ function dijkstra(graph, sourceNode) {
                 // if possible distance is less than current distance for connected node, replace distance with possible distance, and set our current node as the previous node to connected node on our path (jesus christ)
                 if (possibleDist < distances[node]) {
                     distances[node] = possibleDist;
-                    previous[node] = current;
                 }
             }
         }
@@ -55,19 +50,17 @@ function dijkstra(graph, sourceNode) {
         unmarked.splice(unmarked[current], 1);
     }
 
-    // (chatGPT assisted)
-    return {distances, previous};
+    return {distances};
 }
 
-// helper function used to reconstruct shortest path
-function shortestPath(previous, destinationNode) {
-    let path = [];
-    let current = destinationNode;
-    while (current != null) {
-        // add current to front of path (chatGPT assisted)
-        path.unshift(current);
-        // set current to previous of current (node visited before current in original algorithm)
-        current = previous[current];
-    }
-    return path;
-}
+/*
+const graph = {
+    A: { B: 1, C: 4 },
+    B: { A: 1, C: 2, D: 5 },
+    C: { A: 4, B: 2, D: 1 },
+    D: { B: 5, C: 1 }
+};
+
+const { distances } = dijkstra(graph, 'A');
+console.log(distances);
+*/
