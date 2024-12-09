@@ -27,3 +27,5 @@ All code was hand typed by me. ChatGPT was used for assistance and debugging, pa
 
 What is the big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+The time complexity of my implementation is $\Theta$(V<sup>2<\sup>), quadratic with respect to number of vertices. The dominant part of the code as far as time complexity is the for loop nested in the while loop. The outer while loop iterates over all vertices ($\Theta$(V)), and the inner for loop iterates over all unmarked vertices ($\Theta$(V)) for every iteration of the outerloop, giving a final time complexity of $\Theta$(V<sup>2<\sup>)
