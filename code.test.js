@@ -4,15 +4,15 @@ const assert = require('assert');
 
 eval(fs.readFileSync('code.js')+'');
 
-const graph = {
+const graph1 = {
     A: { B: 1, C: 4 },
     B: { A: 1, C: 2, D: 5 },
     C: { A: 4, B: 2, D: 1 },
     D: { B: 5, C: 1 }
 };
-let { distances } = dijkstra(graph, 'A');
-assert(JSON.stringify(distances) == JSON.stringify({A: 0, B: 1, C: 3, D: 4}));
+const d1 = dijkstra(graph1, 'A');
+assert(JSON.stringify(d1) == JSON.stringify({A: 0, B: 1, C: 3, D: 4}));
 
 const graph2 = {};
-{ distances } = dijkstra(graph2, 'A');
-assert(JSON.stringify(distances) == JSON.stringify({}));
+const d2 = dijkstra(graph2, 'A');
+assert(JSON.stringify(d2) == JSON.stringify({}));
