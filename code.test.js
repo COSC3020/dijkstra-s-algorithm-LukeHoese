@@ -10,9 +10,9 @@ const graph = {
     C: { A: 4, B: 2, D: 1 },
     D: { B: 5, C: 1 }
 };
-const { distances } = dijkstra(graph, 'A');
+let { distances } = dijkstra(graph, 'A');
 assert(JSON.stringify(distances) == JSON.stringify({A: 0, B: 1, C: 3, D: 4}));
 
 const graph2 = {};
-const { distances2 } = dijkstra(graph2, 'E');
-assert(JSON.stringify(distances2) == JSON.stringify({}));
+let { distances } = dijkstra(graph2, 'A');
+assert(JSON.stringify(distances) == JSON.stringify({}));
