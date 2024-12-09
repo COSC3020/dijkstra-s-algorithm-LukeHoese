@@ -15,4 +15,4 @@ assert(JSON.stringify(distances) == JSON.stringify({A: 0, B: 1, C: 3, D: 4}));
 
 const graph2 = {};
 const { distances2 } = dijkstra(graph2, 'A');
-assert(JSON.stringify(distances2) == JSON.stringify({}));
+assert(JSON.stringify(distances2) == JSON.stringify({ }));
