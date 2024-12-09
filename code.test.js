@@ -21,7 +21,7 @@ const graph3 = {
     A: {}
 };
 const d3 = dijkstra(graph3, 'A');
-assert(JSON.stringify(d3) == JSON.stringify({A: null}));
+assert(JSON.stringify(d3) == JSON.stringify({A: 0}));
     
 const graph4 = {
     A: { B: 1 },
