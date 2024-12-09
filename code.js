@@ -50,17 +50,17 @@ function dijkstra(graph, sourceNode) {
         unmarked.splice(unmarked[current], 1);
     }
 
-    return {distances};
+    return distances;
 }
 
 /*
-const graph = {
+const graph1 = {
     A: { B: 1, C: 4 },
     B: { A: 1, C: 2, D: 5 },
     C: { A: 4, B: 2, D: 1 },
     D: { B: 5, C: 1 }
 };
 
-const { distances } = dijkstra(graph, 'A');
-console.log(distances);
+const distances1 = dijkstra(graph1, 'A');
+console.log(distances1);
 */
